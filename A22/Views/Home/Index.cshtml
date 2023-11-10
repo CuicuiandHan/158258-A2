@@ -1,0 +1,45 @@
+﻿@model A22.ProductIndexViewModel
+@using PagedList.Mvc
+@{
+    ViewBag.Title = "Store";
+}
+@section style {
+    <link href="~/Content/Index.css" rel="stylesheet" />
+}
+<div class="body">
+    <div class="rightNav">
+        @using (Html.BeginForm("Index", "Home", FormMethod.Get))
+        {
+            <div class="catag">
+                <label>Filter by category:</label>
+                @Html.DropDownListFor(vm => vm.Category, Model.CatFilterItems, "All", new { @class = "a" });
+            </div>
+            <div>
+                <label class="c">Sort by:</label>
+                @Html.DropDownListFor(vm => vm.SortBy, new SelectList(Model.Sorts, "Value", "Key"), "Default", new { @class = "b" })
+                <input type="Submit" value="Filter" class="d" />
+                <input type="hidden" name="Search" id="Search" value="@Model.Search" />
+            </div>
+
+        }
+
+    </div>
+    <div class="leftPro">
+        @foreach (var item in Model.Products)
+        {
+            <div class="pro">
+                <img src="@item.Img" alt="Alternate Text" />
+                <h2>@item.Name</h2>
+                <hr />
+                <p>@item.Dscription</p>
+                <h1>@item.Price$</h1>
+            </div>
+        }
+    </div>
+</div>
+<div class="sorting">
+    Page @(Model.Products.PageNumber) of @Model.Products.PageCount
+    <div class="pagination-container">
+        @Html.PagedListPager(Model.Products, page => Url.Action("Index", new { category = Model.Category, Search = Model.Search, sortBy = Model.SortBy, page }))
+    </div>
+</div>

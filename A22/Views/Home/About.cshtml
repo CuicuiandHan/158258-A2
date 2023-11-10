@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "About Us";
+}
+
+@section style {
+    <link href="~/Content/about.css" rel="stylesheet" />
+}
+
+<main class="title">
+    <div class="about-section">
+        <h3 class="about-title">About STCL - Your One-Stop Xiaomi Electronics Store</h3>
+        <p class="about-content">
+            Welcome to STCL, your premier destination for all things Xiaomi! We are dedicated to providing you with the latest and greatest Xiaomi products, including smartphones, laptops, tablets, and more.
+        </p>
+        <p class="about-content">
+            Our mission is to bring the best of Xiaomi's innovative technology and stylish design directly to your doorstep. We offer a wide range of Xiaomi products, known for their quality, performance, and affordability.
+        </p>
+        <p class="about-content">
+            At STCL, we are committed to delivering the ultimate shopping experience. Whether you're a Xiaomi enthusiast or looking to explore their products, we've got you covered. Shop with confidence, knowing that you'll find the best deals and customer service here.
+        </p>
+        <p class="about-content">
+            if you have any problem,please contact <a href="mailto:example@example.com">mailto:example@example.com</a>
+        </p>
+        <h3>If you would like to visit our offline store for purchasing, you can find us on the map.</h3>
+        <div style="width: 520px; height: 340px; border: 1px solid gray" id="container"></div>
+    </div>
+
+</main>
+
+@section scripts {
+    <script type="text/javascript" src="https://api.map.baidu.com/api?v=3.0&ak=LvUnHLrUwciQPD2KFpdf7bSHwauo00tQ"></script>
+    <script type="text/javascript">
+        var map = new BMap.Map("container");
+        var sContent =
+            "<h4 style='margin: 0;'>SCTL STORE</h4><br/>地址:河北省天津市区兴南道534号";
+        var point = new BMap.Point(117.16962, 39.15172);
+        map.centerAndZoom(point, 16);
+        map.addControl(new BMap.NavigationControl());
+        map.enableScrollWheelZoom(true);
+        var infoWindow = new BMap.InfoWindow(sContent);
+        map.openInfoWindow(infoWindow, point);
+    </script>
+
+}

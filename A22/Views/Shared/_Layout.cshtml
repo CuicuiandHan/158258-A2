@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - welcome</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link rel="stylesheet" type="text/css" href="~/Content/Layout.css">
+
+    @RenderSection("style", required: false)
+</head>
+<body>
+    <div class="nav">
+        <div class="logo">
+        </div>
+        <div class="right">
+            <ul class="menu">
+                <li>@Html.ActionLink("Store", "Index", "Home", new { area = "" }, new { @class = "link" })</li>
+                <li>@Html.ActionLink("Advertising", "Contact", "Home", new { area = "" }, new { @class = "link" })</li>
+                <li>@Html.ActionLink("About", "About", "Home", new { area = "" }, new { @class = "link" })</li>
+            </ul>
+            @using (Html.BeginForm("Index", "Home", FormMethod.Get, new { @class = "forma" }))
+            {
+                <button type="submit" class="btna ">Submit</button>
+
+                @Html.TextBox("Search", null, new { @class = "formc", @placeholder = "Search Products" })
+            }
+
+
+        </div>
+    </div>
+    @RenderBody()
+    <footer class="footer">
+        <p>   &copy; @DateTime.Now.Year - If you have questions or suggestions, please contact <a href="mailto:example@example.com">mailto:example@example.com</a></p>
+         
+        
+
+    </footer>
+
+</body>
+@RenderSection("scripts", required: false)
+</html>

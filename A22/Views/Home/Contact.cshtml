@@ -1,0 +1,55 @@
+﻿@{
+    ViewBag.Title = "adv";
+}
+
+@section style{
+    <link href="~/Content/adv.css" rel="stylesheet" />
+}
+
+<div class="body">
+    <div class="left">
+        <div class="mySlides">
+            <a href="@Url.Action("Index", "Home")" class="link">
+                <img src="~/pictureOfAdv/adv1.jpg" alt="Alternate Text" />
+            </a>
+        </div>
+        <div class="mySlides">
+            <a href="@Url.Action("Index", "Home")" class="link">
+                <img src="~/pictureOfAdv/adv2.jpg" alt="Alternate Text 2" />
+            </a>
+        </div>
+        <div class="mySlides">
+            <a href="@Url.Action("Index", "Home")" class="link">
+                <img src="~/pictureOfAdv/adv3.jpg" alt="Alternate Text 3" />
+            </a>
+        </div>
+    </div>
+    <div class="newProduct">
+        <div class="video">
+            <div class="video-box">
+                <video controls width="433" height="300" >
+                    <source src="~/video/video1.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-box">
+                <video controls width="433" height="300">
+                    <source src="~/video/video2.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+            <div class="video-box">
+                <video controls width="433" height="300">
+                    <source src="~/video/video3.mp4" type="video/mp4">
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+@section scripts{
+    <script src="~/Scripts/adv.js"></script>
+}

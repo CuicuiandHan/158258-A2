@@ -1,0 +1,16 @@
+﻿
+.about-section {
+    background-color: #f5f5f5;
+    padding: 20px;
+    width:1600px;
+}
+
+.about-title {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.about-content {
+    font-size: 16px;
+    line-height: 1.5;
+}

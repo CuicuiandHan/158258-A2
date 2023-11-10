@@ -1,0 +1,38 @@
+﻿.body {
+    width:1600px;
+    margin-bottom:6px;
+    border:0;
+    padding-left:140px;
+    background-color:antiquewhite;
+}
+.left{
+    width:1300px;
+    height:400px;
+
+}
+  .left img {
+        width: 1300px;
+        height: 400px;
+    }
+
+
+.mySlides {
+    display: none;
+}
+.newProduct{
+    border:0px;
+    width:1300px;
+    height:300px;
+    background-color:white;
+}
+
+
+.video-box{
+    float:left;
+    background-color:black;
+}
+.video{
+    width:1300px;
+    height:300px;
+ 
+}
